@@ -5,7 +5,6 @@ namespace :puma do
   set :web_server, :puma
 
   set :puma_role,      -> { fetch(:user) }
-  set :puma_env,       -> { fetch(:rails_env, 'production') }
   set :puma_config,    -> { "#{fetch(:shared_path)}/config/puma.rb" }
   set :puma_socket,    -> { "#{fetch(:shared_path)}/tmp/sockets/puma.sock" }
   set :puma_state,     -> { "#{fetch(:shared_path)}/tmp/sockets/puma.state" }
